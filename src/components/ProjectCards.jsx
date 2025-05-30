@@ -15,7 +15,7 @@ const ProjectCards = () => {
                 {[...posts]
                     .sort((a, b) => new Date(b.date) - new Date(a.date))
                     .map((project) => (
-                        <div key={project.id} className="card bg-zinc-800 shadow-sm">
+                        <div key={project.id} className="card bg-zinc-800 border border-gray-700 shadow-sm">
                             <figure>
                                 <img
                                     src={project.images[0]}

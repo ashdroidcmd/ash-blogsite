@@ -11,7 +11,7 @@ import PostPage from './pages/PostPage'
 function App() {
   return (
     <>
-      <BrowserRouter>
+      <BrowserRouter basename="/ash-blogsite">
       <Analytics />
       <ScrollToTop />
         <Routes>
