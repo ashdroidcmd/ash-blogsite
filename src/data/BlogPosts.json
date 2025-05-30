@@ -230,16 +230,15 @@
   },
   {
     "id": 6,
-    "title": "Ultrasonic Distance Sensor with LED",
+    "title": "Ultrasonic Distance Sensor",
     "slug": "ultrasonic-distance-sensor",
     "date": "May 19, 2025",
-    "description": "Use an HC-SR04 ultrasonic sensor to detect the distance of nearby objects. Turn on an LED when an object is within a specific range. This project introduces distance measurement and conditional logic in Arduino.",
+    "description": "Use an HC-SR04 ultrasonic sensor to detect the distance of nearby objects. This project introduces distance measurement and conditional logic in Arduino.",
     "youtubeUrl": "https://www.youtube.com/embed/BUcBHYbr0x4",
     "howItWorks": [
       "The ultrasonic sensor sends out a sound wave from the Trig pin.",
       "When the sound hits an object, it reflects back to the Echo pin.",
-      "Arduino measures the time taken and calculates the distance using the speed of sound.",
-      "If the distance is below a threshold (e.g., 10 cm), the LED turns on."
+      "Arduino measures the time taken and calculates the distance using the speed of sound."
     ],
     "componentsUsed": [
       "1 × Arduino Uno",
