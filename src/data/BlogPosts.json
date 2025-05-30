@@ -1,0 +1,271 @@
+[
+  {
+    "id": 1,
+    "title": "Blinking an LED",
+    "slug": "led-blink",
+    "date": "April 14, 2025",
+    "description": "Learn how to blink an LED using an Arduino — the classic first project to get started with electronics and programming.",
+    "youtubeUrl": "https://www.youtube.com/embed/A859NBlvE90",
+    "howItWorks": [
+      "The Arduino sends a HIGH signal to the digital pin connected to the LED, turning it on.",
+      "It waits for a specific time using delay().",
+      "Then it sends a LOW signal to turn the LED off.",
+      "This cycle repeats continuously, causing the LED to blink."
+    ],
+    "componentsUsed": [
+      "1 × Arduino Uno",
+      "1 × Breadboard",
+      "1 × LED (any color)",
+      "1 × 220Ω resistor",
+      "Jumper wires"
+    ],
+    "wiringDiagram": {
+      "LED Connection": [
+        "Anode (long leg) of LED → Digital Pin 13 via a 220Ω resistor",
+        "Cathode (short leg) of LED → GND"
+      ]
+    },
+    "codeBreakdown": [
+      "`pinMode(13, OUTPUT)` configures pin 13 as an output pin.",
+      "`digitalWrite(13, HIGH)` turns the LED on.",
+      "`delay(1000)` keeps the LED on for 1 second.",
+      "`digitalWrite(13, LOW)` turns the LED off.",
+      "`delay(1000)` keeps the LED off for 1 second before the loop repeats."
+    ],
+    "lessonsLearned": [
+      "Understanding how digital output pins work.",
+      "Using `pinMode()`, `digitalWrite()`, and `delay()` functions.",
+      "Creating a simple loop for repetitive actions.",
+      "Basics of circuit wiring using breadboards and resistors."
+    ],
+    "images": ["/images/1blinkled.jpg", "/images/1circuit.png"],
+    "code": "/arduino-codes/blinking-led.rar"
+  },
+  {
+    "id": 2,
+    "title": "Button-Controlled LED",
+    "slug": "button-led",
+    "date": "April 21, 2025",
+    "description": "Control an LED with a push button. When the button is pressed, the LED turns on — a basic but essential digital input/output example.",
+    "youtubeUrl": "https://www.youtube.com/embed/mCfRZKnWwAc",
+    "howItWorks": [
+      "The button is connected to a digital input pin on the Arduino.",
+      "When the button is pressed, it completes the circuit, and the pin reads HIGH.",
+      "The Arduino checks the button state and turns on the LED if the button is pressed.",
+      "When the button is released, the pin reads LOW and the LED turns off."
+    ],
+    "componentsUsed": [
+      "1 × Arduino Uno",
+      "1 × Breadboard",
+      "1 × LED (any color)",
+      "1 × 220Ω resistor (for LED)",
+      "1 × Push button",
+      "1 × 10kΩ resistor (for pull-down)",
+      "Jumper wires"
+    ],
+    "wiringDiagram": {
+      "LED Connection": [
+        "Anode (long leg) of LED → Digital Pin 13 via a 220Ω resistor",
+        "Cathode (short leg) → GND"
+      ],
+      "Button Connection": [
+        "One leg of button → Digital Pin 2",
+        "Same leg → GND via 10kΩ resistor (pull-down)",
+        "Other leg of button → 5V"
+      ]
+    },
+    "codeBreakdown": [
+      "`pinMode(2, INPUT)` sets pin 2 as an input for the button.",
+      "`pinMode(13, OUTPUT)` sets pin 13 as an output for the LED.",
+      "`digitalRead(2)` reads the state of the button.",
+      "`digitalWrite(13, HIGH)` turns the LED on if the button is pressed.",
+      "`digitalWrite(13, LOW)` turns the LED off if the button is not pressed."
+    ],
+    "lessonsLearned": [
+      "How to use a digital input (button) with Arduino.",
+      "How to wire a button with a pull-down resistor to ensure reliable input reading.",
+      "How to control an output (LED) based on input (button) state.",
+      "Understanding HIGH and LOW digital signals."
+    ],
+    "images": ["/images/2button.jpg", "/images/2circuit.png"],
+    "code": "/arduino-codes/button-led.rar"
+  },
+  {
+    "id": 3,
+    "title": "Potentiometer LED Dimmer",
+    "slug": "potentiometer-led-dimmer",
+    "date": "April 28, 2025",
+    "description": "Control the brightness of an LED using a potentiometer. This project introduces analog input and PWM output in Arduino.",
+    "youtubeUrl": "https://www.youtube.com/embed/Vv5VWb3d06E",
+    "howItWorks": [
+      "The potentiometer outputs a varying voltage depending on its rotation.",
+      "The Arduino reads this voltage as an analog input value (0–1023).",
+      "This value is scaled down (0–255) and used in analogWrite() to control LED brightness.",
+      "The result is a smooth dimming effect as you rotate the potentiometer."
+    ],
+    "componentsUsed": [
+      "1 × Arduino Uno",
+      "1 × Breadboard",
+      "1 × LED (any color)",
+      "1 × 220Ω resistor (for LED)",
+      "1 × Potentiometer (10kΩ recommended)",
+      "Jumper wires"
+    ],
+    "wiringDiagram": {
+      "LED Connection": [
+        "Anode (long leg) of LED → Digital Pin 9 through a 220Ω resistor",
+        "Cathode (short leg) → GND"
+      ],
+      "Potentiometer Connection": [
+        "Middle pin → A0 (analog input)",
+        "One outer pin → 5V",
+        "Other outer pin → GND"
+      ]
+    },
+    "codeBreakdown": [
+      "`analogRead(A0)` reads the potentiometer's position as a value from 0 to 1023.",
+      "`map()` function converts this value to 0–255 for LED brightness.",
+      "`analogWrite(ledPin, brightness)` sets the PWM signal to adjust LED brightness.",
+      "This runs continuously in loop() to reflect real-time changes in potentiometer position."
+    ],
+    "lessonsLearned": [
+      "How to use analog input with `analogRead()`.",
+      "How to apply PWM output with `analogWrite()`.",
+      "Using `map()` to convert one range of values to another.",
+      "Controlling LED brightness based on sensor input."
+    ],
+    "images": ["/images/3dimmer.jpg", "/images/3circuit.png"],
+    "code": "/arduino-codes/pwm-dimmer-led.rar"
+  },
+  {
+    "id": 4,
+    "title": "Traffic Light System",
+    "slug": "traffic-light-system",
+    "date": "May 5, 2025",
+    "description": "Simulate a simple traffic light system using three LEDs (Red, Yellow, Green) connected to an Arduino. This project teaches timing and sequencing with digital outputs.",
+    "youtubeUrl": "https://www.youtube.com/embed/iOR6QZrBvjg",
+    "howItWorks": [
+      "The Green LED turns on to simulate cars being allowed to go.",
+      "After a delay, the Yellow LED turns on to indicate caution.",
+      "Then the Red LED turns on to simulate cars stopping.",
+      "The cycle repeats to simulate a real traffic light timing sequence."
+    ],
+    "componentsUsed": [
+      "1 × Arduino Uno",
+      "1 × Breadboard",
+      "3 × LEDs (Red, Yellow, Green)",
+      "3 × 220Ω resistors",
+      "Jumper wires"
+    ],
+    "wiringDiagram": {
+      "LED Connections": [
+        "Red LED → Digital Pin 8 through 220Ω resistor → GND",
+        "Yellow LED → Digital Pin 9 through 220Ω resistor → GND",
+        "Green LED → Digital Pin 10 through 220Ω resistor → GND"
+      ]
+    },
+    "codeBreakdown": [
+      "`pinMode(pin, OUTPUT)` configures the LED pins as outputs.",
+      "`digitalWrite(pin, HIGH)` turns the corresponding LED on.",
+      "`delay(time)` holds the state for a defined period.",
+      "`digitalWrite(pin, LOW)` turns the LED off before the next stage.",
+      "The logic cycles from green → yellow → red continuously."
+    ],
+    "lessonsLearned": [
+      "Controlling multiple digital outputs with Arduino.",
+      "Creating timed sequences using `delay()`.",
+      "Simulating real-world systems using basic components and logic.",
+      "Importance of modular and readable code structure."
+    ],
+    "images": ["/images/4trafficlight.jpg", "/images/4circuit.png"],
+    "code": "/arduino-codes/traffic-light-system.rar"
+  },
+  {
+    "id": 5,
+    "title": "LDR Light Sensor LED Control",
+    "slug": "ldr-light-sensor",
+    "date": "May 12, 2025",
+    "description": "Use an LDR (Light Dependent Resistor) to detect the brightness of the environment and automatically turn on an LED in darkness — a basic example of analog input in action.",
+    "youtubeUrl": "https://www.youtube.com/embed/ECSc-evLxWg",
+    "howItWorks": [
+      "The LDR changes its resistance based on ambient light — lower resistance in light, higher resistance in darkness.",
+      "The voltage across the LDR is read via an analog pin (A0).",
+      "If the light level drops below a certain threshold, the Arduino turns on the LED.",
+      "If the light level is above the threshold, the LED remains off."
+    ],
+    "componentsUsed": [
+      "1 × Arduino Uno",
+      "1 × Breadboard",
+      "1 × LDR (Photoresistor)",
+      "1 × 10kΩ resistor (for voltage divider)",
+      "1 × LED",
+      "1 × 220Ω resistor (for LED)",
+      "Jumper wires"
+    ],
+    "wiringDiagram": {
+      "LDR Circuit (Voltage Divider)": [
+        "One end of LDR → 5V",
+        "Other end of LDR → A0",
+        "10kΩ Resistor between A0 and GND"
+      ],
+      "LED Connection": [
+        "Anode (long leg) of LED → Digital Pin 9 through a 220Ω resistor",
+        "Cathode (short leg) → GND"
+      ]
+    },
+    "codeBreakdown": [
+      "`analogRead(A0)` reads the voltage drop from the LDR to determine light level.",
+      "`if (lightLevel < threshold)` checks whether it's dark.",
+      "`digitalWrite(ledPin, HIGH)` turns on the LED in darkness.",
+      "`digitalWrite(ledPin, LOW)` turns off the LED in brightness."
+    ],
+    "lessonsLearned": [
+      "How to use analog sensors (LDR) with Arduino.",
+      "How a voltage divider works with resistors and sensors.",
+      "Using conditional logic to respond to sensor input.",
+      "Simulating real-world automation based on environment input."
+    ],
+    "images": ["/images/5ldr.png", "/images/5circuit.png"],
+    "code": "/arduino-codes/ldr-led.rar"
+  },
+  {
+    "id": 6,
+    "title": "Ultrasonic Distance Sensor with LED",
+    "slug": "ultrasonic-distance-sensor",
+    "date": "May 19, 2025",
+    "description": "Use an HC-SR04 ultrasonic sensor to detect the distance of nearby objects. Turn on an LED when an object is within a specific range. This project introduces distance measurement and conditional logic in Arduino.",
+    "youtubeUrl": "https://www.youtube.com/embed/BUcBHYbr0x4",
+    "howItWorks": [
+      "The ultrasonic sensor sends out a sound wave from the Trig pin.",
+      "When the sound hits an object, it reflects back to the Echo pin.",
+      "Arduino measures the time taken and calculates the distance using the speed of sound.",
+      "If the distance is below a threshold (e.g., 10 cm), the LED turns on."
+    ],
+    "componentsUsed": [
+      "1 × Arduino Uno",
+      "1 × HC-SR04 Ultrasonic Sensor",
+      "Jumper wires"
+    ],
+    "wiringDiagram": {
+      "Ultrasonic Sensor": [
+        "VCC → 5V",
+        "GND → GND",
+        "Trig → Digital Pin 9",
+        "Echo → Digital Pin 8"
+      ]
+    },
+    "codeBreakdown": [
+      "`digitalWrite(trigPin, HIGH)` sends a 10µs pulse to start the ultrasonic wave.",
+      "`pulseIn(echoPin, HIGH)` measures the time it takes to receive the echo.",
+      "`distance = duration * 0.034 / 2` converts the time into distance (in cm)."
+    ],
+    "lessonsLearned": [
+      "How ultrasonic distance sensors work.",
+      "Using timing functions to measure pulse duration.",
+      "Applying basic physics (speed of sound) in code.",
+      "Making decisions based on sensor input."
+    ],
+    "images": ["/images/6ultrasonic.png", "/images/6circuit.png"],
+    "code": "/arduino-codes/ultrasonic-sensor.rar"
+  }
+]
