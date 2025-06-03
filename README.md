@@ -28,7 +28,7 @@ A **minimal** and **responsive** blog website dedicated to sharing breakdowns of
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/arduino-3d-blog.git
+git clone https://github.com/ashdroidcmd/ash-blogsite
 cd arduino-3d-blog
 
 # Install dependencies
