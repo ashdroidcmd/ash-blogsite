@@ -1,13 +1,13 @@
-import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
-import projectsData from '../data/BlogPosts.json'; // adjust path as needed
+import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import projectsData from "../data/BlogPosts.json"; // adjust path as needed
 
 const PostPage = () => {
   const { slug } = useParams();
   const [post, setPost] = useState(null);
 
   useEffect(() => {
-    const foundPost = projectsData.find(p => p.slug === slug);
+    const foundPost = projectsData.find((p) => p.slug === slug);
     if (foundPost) {
       setPost(foundPost);
     } else {
@@ -20,9 +20,10 @@ const PostPage = () => {
   return (
     <section className="min-h-dvh pt-22 bg-zinc-950 font-[Roboto]">
       <div className="max-w-7xl mx-auto p-4">
-
         {/* Title and Date */}
-        <h1 className="text-4xl font-semibold font-[Montserrat]">{post.title}</h1>
+        <h1 className="text-4xl font-semibold font-[Montserrat]">
+          {post.title}
+        </h1>
         <p className="mb-4">{post.date}</p>
 
         {/* Optional Video Embed */}
@@ -44,14 +45,19 @@ const PostPage = () => {
         <p className="mb-6">{post.description}</p>
 
         {/* Components Used */}
-        <h3 className="text-3xl font-[Montserrat] font-semibold">Components Used</h3>
+        <h3 className="text-3xl font-[Montserrat] font-semibold">
+          Components Used
+        </h3>
         <ol className="mb-4 list-disc ps-7">
-          {post.componentsUsed && post.componentsUsed.map((item, i) => <li key={i}>{item}</li>)}
+          {post.componentsUsed &&
+            post.componentsUsed.map((item, i) => <li key={i}>{item}</li>)}
         </ol>
 
         {/* Wiring Diagram */}
-        <h3 className="text-3xl font-[Montserrat] font-semibold">Wiring Diagram</h3>
-        
+        <h3 className="text-3xl font-[Montserrat] font-semibold">
+          Wiring Diagram
+        </h3>
+
         {post.images && post.images.length > 0 && (
           <figure>
             <img
@@ -66,7 +72,9 @@ const PostPage = () => {
           <div className="mb-8">
             {Object.entries(post.wiringDiagram).map(([component, steps]) => (
               <div key={component} className="mb-6">
-                <h3 className="text-3xl font-[Montserrat] font-semibold">{component}</h3>
+                <h3 className="text-3xl font-[Montserrat] font-semibold">
+                  {component}
+                </h3>
                 <ul className="mb-4 list-disc ps-7">
                   {steps.map((step, index) => (
                     <li key={index}>{step}</li>
@@ -85,21 +93,30 @@ const PostPage = () => {
         </a>
 
         {/* How it Works */}
-        <h3 className="text-3xl font-[Montserrat] font-semibold">How it Works</h3>
+        <h3 className="text-3xl font-[Montserrat] font-semibold">
+          How it Works
+        </h3>
         <ol className="mb-4 list-disc ps-7">
-          {post.howItWorks && post.howItWorks.map((item, i) => <li key={i}>{item}</li>)}
+          {post.howItWorks &&
+            post.howItWorks.map((item, i) => <li key={i}>{item}</li>)}
         </ol>
 
         {/* Code Breakdown */}
-        <h3 className="text-3xl font-[Montserrat] font-semibold">Code Breakdown</h3>
+        <h3 className="text-3xl font-[Montserrat] font-semibold">
+          Code Breakdown
+        </h3>
         <ul className="mb-6 list-disc ps-7">
-          {post.codeBreakdown && post.codeBreakdown.map((item, i) => <li key={i}>{item}</li>)}
+          {post.codeBreakdown &&
+            post.codeBreakdown.map((item, i) => <li key={i}>{item}</li>)}
         </ul>
 
         {/* What I Learned */}
-        <h3 className="text-3xl font-[Montserrat] font-semibold">What I Learned</h3>
+        <h3 className="text-3xl font-[Montserrat] font-semibold">
+          What I Learned
+        </h3>
         <ul className="mb-6 list-disc ps-7">
-          {post.lessonsLearned && post.lessonsLearned.map((item, i) => <li key={i}>{item}</li>)}
+          {post.lessonsLearned &&
+            post.lessonsLearned.map((item, i) => <li key={i}>{item}</li>)}
         </ul>
       </div>
     </section>

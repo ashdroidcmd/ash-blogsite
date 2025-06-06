@@ -1,19 +1,21 @@
-import { Link } from "react-router-dom"
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
-    return (
-        <>
-            <nav className="bg-zinc-900 border-b border-b-gray-700 shadow-sm fixed w-full z-50 font-[Roboto]">
-                <div className="mx-auto max-w-7xl navbar">
+  return (
+    <>
+      <nav className="bg-zinc-900 border-b border-b-gray-700 shadow-sm fixed w-full z-50 font-[Roboto]">
+        <div className="mx-auto max-w-7xl navbar">
+          <div className="navbar-start flex flex-row items-center">
+            <Link
+              to="/"
+              className="btn btn-ghost py-8 px-6 text-4xl font-[Montserrat]"
+            >
+              <img src="/logo.png" alt="Logo" className="w-14 h-14" />
+              Blog
+            </Link>
+          </div>
 
-                    <div className="navbar-start flex flex-row items-center">
-                        <Link to="/" className="btn btn-ghost py-8 px-6 text-4xl font-[Montserrat]">
-                            <img src="/logo.png" alt="Logo" className="w-14 h-14"/>
-                        Blog
-                        </Link>
-                    </div>
-
-                    {/* <div className="navbar-end">
+          {/* <div className="navbar-end">
                         <ul className="menu menu-horizontal px-1">
                             <li><Link to="/">Home</Link></li>
                             <li><Link to="/about">About</Link></li>
@@ -32,10 +34,10 @@ const Navbar = () => {
                             </ul>
                         </div>
                     </div> */}
-                </div>
-            </nav>
-        </>
-    )
-}
+        </div>
+      </nav>
+    </>
+  );
+};
 
-export default Navbar
+export default Navbar;
