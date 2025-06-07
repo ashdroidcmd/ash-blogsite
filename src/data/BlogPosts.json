@@ -266,5 +266,48 @@
     ],
     "images": ["/images/6ultrasonic.png", "/images/6circuit.png"],
     "code": "/arduino-codes/ultrasonic-sensor.rar"
+  },{
+    "id": 7,
+    "title": "Temperature and Humidity Monitor",
+    "slug": "temperature-humidity-monitor",
+    "date": "May 26, 2025",
+    "description": "Monitor temperature and humidity levels using a DHT11 sensor and display the readings on a 16x2 I2C LCD. This project introduces digital sensors and I2C communication.",
+    "youtubeUrl": "https://www.youtube.com/embed/n8nR1ePdF-g",
+    "howItWorks": [
+      "The DHT11 sensor measures the ambient temperature and humidity.",
+      "The Arduino reads the sensor data using the DHT library.",
+      "Values are displayed on a 16x2 LCD using the I2C interface.",
+      "Serial Monitor also logs the temperature and humidity for debugging."
+    ],
+    "componentsUsed": [
+      "1 × Arduino Uno",
+      "1 × DHT11 Temperature and Humidity Sensor",
+      "1 × 16x2 I2C LCD Display",
+      "Jumper wires",
+      "Breadboard"
+    ],
+    "wiringDiagram": {
+      "DHT11 Sensor": [
+        "VCC → 5V",
+        "GND → GND",
+        "Data → Digital Pin 2"
+      ],
+      "I2C LCD": ["VCC → 5V", "GND → GND", "SDA → A4 Analog Pin 4", "SCL → A5 Analog Pin 5"]
+    },
+    "codeBreakdown": [
+      "`dht.readTemperature()` reads temperature in Celsius.",
+      "`dht.readHumidity()` gets the relative humidity percentage.",
+      "`lcd.setCursor(col, row)` positions the cursor for writing on LCD.",
+      "`lcd.print()` writes values to the screen.",
+      "`Serial.print()` outputs data to the serial monitor for debugging."
+    ],
+    "lessonsLearned": [
+      "How to use DHT11 for temperature and humidity sensing.",
+      "How to interface I2C LCDs with Arduino.",
+      "Displaying real-time data on both LCD and Serial Monitor.",
+      "Reading and interpreting sensor data using libraries."
+    ],
+    "images": ["/images/7dht11.jpg", "/images/7circuit.png"],
+    "code": "/arduino-codes/dht11-with-lcd.rar"
   }
 ]
