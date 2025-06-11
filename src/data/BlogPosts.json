@@ -38,7 +38,10 @@
       "Creating a simple loop for repetitive actions.",
       "Basics of circuit wiring using breadboards and resistors."
     ],
-    "images": ["/images/1blinkled.jpg", "/images/1circuit.png"],
+    "images": [
+      "https://res.cloudinary.com/dmkri61cj/image/upload/f_auto,q_auto/v1749646592/1blinkled_e5xph8.jpg",
+      "https://res.cloudinary.com/dmkri61cj/image/upload/f_auto,q_auto/v1749646477/1circuit_bsjrvt.png"
+    ],
     "code": "/arduino-codes/blinking-led.rar"
   },
   {
@@ -87,7 +90,10 @@
       "How to control an output (LED) based on input (button) state.",
       "Understanding HIGH and LOW digital signals."
     ],
-    "images": ["/images/2button.jpg", "/images/2circuit.png"],
+    "images": [
+      "https://res.cloudinary.com/dmkri61cj/image/upload/f_auto,q_auto/v1749646598/2button_z4ylds.jpg",
+      "https://res.cloudinary.com/dmkri61cj/image/upload/f_auto,q_auto/v1749646440/2circuit_byvvmt.png"
+    ],
     "code": "/arduino-codes/button-led.rar"
   },
   {
@@ -134,7 +140,10 @@
       "Using `map()` to convert one range of values to another.",
       "Controlling LED brightness based on sensor input."
     ],
-    "images": ["/images/3dimmer.jpg", "/images/3circuit.png"],
+    "images": [
+      "https://res.cloudinary.com/dmkri61cj/image/upload/f_auto,q_auto/v1749646602/3dimmer_pthm1x.jpg",
+      "https://res.cloudinary.com/dmkri61cj/image/upload/f_auto,q_auto/v1749646445/3circuit_bauhjx.png"
+    ],
     "code": "/arduino-codes/pwm-dimmer-led.rar"
   },
   {
@@ -177,7 +186,10 @@
       "Simulating real-world systems using basic components and logic.",
       "Importance of modular and readable code structure."
     ],
-    "images": ["/images/4trafficlight.jpg", "/images/4circuit.png"],
+    "images": [
+      "https://res.cloudinary.com/dmkri61cj/image/upload/f_auto,q_auto/v1749646614/4trafficlight_zni6es.jpg",
+      "https://res.cloudinary.com/dmkri61cj/image/upload/f_auto,q_auto/v1749646538/4circuit_tof6an.png"
+    ],
     "code": "/arduino-codes/traffic-light-system.rar"
   },
   {
@@ -225,7 +237,10 @@
       "Using conditional logic to respond to sensor input.",
       "Simulating real-world automation based on environment input."
     ],
-    "images": ["/images/5ldr.png", "/images/5circuit.png"],
+    "images": [
+      "https://res.cloudinary.com/dmkri61cj/image/upload/f_auto,q_auto/v1749646572/5ldr_fhrujk.png",
+      "https://res.cloudinary.com/dmkri61cj/image/upload/f_auto,q_auto/v1749646430/5circuit_jewrgr.png"
+    ],
     "code": "/arduino-codes/ldr-led.rar"
   },
   {
@@ -264,9 +279,13 @@
       "Applying basic physics (speed of sound) in code.",
       "Making decisions based on sensor input."
     ],
-    "images": ["/images/6ultrasonic.png", "/images/6circuit.png"],
+    "images": [
+      "https://res.cloudinary.com/dmkri61cj/image/upload/f_auto,q_auto/v1749646587/6ultrasonic_enlmkn.png",
+      "https://res.cloudinary.com/dmkri61cj/image/upload/f_auto,q_auto/v1749646432/6circuit_i2usty.png"
+    ],
     "code": "/arduino-codes/ultrasonic-sensor.rar"
-  },{
+  },
+  {
     "id": 7,
     "title": "Temperature and Humidity Monitor",
     "slug": "temperature-humidity-monitor",
@@ -287,12 +306,13 @@
       "Breadboard"
     ],
     "wiringDiagram": {
-      "DHT11 Sensor": [
+      "DHT11 Sensor": ["VCC → 5V", "GND → GND", "Data → Digital Pin 2"],
+      "I2C LCD": [
         "VCC → 5V",
         "GND → GND",
-        "Data → Digital Pin 2"
-      ],
-      "I2C LCD": ["VCC → 5V", "GND → GND", "SDA → A4 Analog Pin 4", "SCL → A5 Analog Pin 5"]
+        "SDA → A4 Analog Pin 4",
+        "SCL → A5 Analog Pin 5"
+      ]
     },
     "codeBreakdown": [
       "`dht.readTemperature()` reads temperature in Celsius.",
@@ -307,7 +327,10 @@
       "Displaying real-time data on both LCD and Serial Monitor.",
       "Reading and interpreting sensor data using libraries."
     ],
-    "images": ["/images/7dht11.jpg", "/images/7circuit.png"],
+    "images": [
+      "https://res.cloudinary.com/dmkri61cj/image/upload/f_auto,q_auto/v1749646589/7dht11_plazoj.jpg",
+      "https://res.cloudinary.com/dmkri61cj/image/upload/f_auto,q_auto/v1749646534/7circuit_edz0et.png"
+    ],
     "code": "/arduino-codes/dht11-with-lcd.rar"
   }
 ]
