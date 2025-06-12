@@ -5,7 +5,6 @@ import MainLayout from "./layout/MainLayout";
 import ScrollToTop from "./utils/ScrollToTop";
 import HomePage from "./pages/HomePage";
 import PostPage from "./pages/PostPage";
-import AddBlog from "./pages/AddBlog";
 
 function App() {
   return (
@@ -17,7 +16,6 @@ function App() {
         <Routes>
           <Route path="/" element={<MainLayout />}>
             <Route index element={<HomePage />} />
-            <Route path="/add-blog" element={<AddBlog />} />
             <Route path="/projects/:slug" element={<PostPage />} />
           </Route>
         </Routes>

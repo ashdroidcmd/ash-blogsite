@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link, useSearchParams } from "react-router-dom";
-import projectsData from "../data/BlogPosts.json";
+import { db } from "../firebase";
+import { collection, getDocs } from "firebase/firestore";
 
 const ProjectCards = () => {
   const [posts, setPosts] = useState([]);
@@ -10,7 +11,22 @@ const ProjectCards = () => {
   const postsPerPage = 9;
 
   useEffect(() => {
-    setPosts(projectsData);
+    const fetchPosts = async () => {
+      try {
+        const querySnapshot = await getDocs(
+          collection(db, "arduino-blogposts")
+        );
+        const postData = querySnapshot.docs.map((doc) => ({
+          id: doc.id,
+          ...doc.data(),
+        }));
+        setPosts(postData);
+      } catch (error) {
+        console.error("Error fetching posts:", error);
+      }
+    };
+
+    fetchPosts();
   }, []);
 
   const sortedPosts = [...posts].sort(
@@ -25,6 +41,25 @@ const ProjectCards = () => {
   const goToPage = (page) => {
     setSearchParams({ page: page.toString() });
   };
+
+  useEffect(() => {
+    const fetchPosts = async () => {
+      try {
+        const querySnapshot = await getDocs(
+          collection(db, "arduino-blogposts")
+        );
+        const postData = querySnapshot.docs.map((doc) => ({
+          id: doc.id,
+          ...doc.data(),
+        }));
+        setPosts(postData);
+      } catch (error) {
+        console.error("Error fetching posts:", error);
+      }
+    };
+
+    fetchPosts();
+  }, []);
 
   return (
     <section className="py-10 px-4 max-w-7xl mx-auto">

@@ -1,20 +1,31 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import projectsData from "../data/BlogPosts.json"; // adjust path as needed
+import { doc, getDoc } from "firebase/firestore";
+import { db } from "../firebase"; // Make sure this path is correct
 
 const PostPage = () => {
   const { slug } = useParams();
   const [post, setPost] = useState(null);
 
   useEffect(() => {
-    const foundPost = projectsData.find((p) => p.slug === slug);
-    if (foundPost) {
-      setPost(foundPost);
-    } else {
-      setPost(null);
-    }
-  }, [slug]);
+    const fetchPost = async () => {
+      try {
+        const docRef = doc(db, "arduino-blogposts", slug);
+        const docSnap = await getDoc(docRef);
 
+        if (docSnap.exists()) {
+          setPost(docSnap.data());
+        } else {
+          setPost(null);
+        }
+      } catch (error) {
+        console.error("Error fetching post:", error);
+        setPost(null);
+      }
+    };
+
+    fetchPost();
+  }, [slug]);
   if (!post) return <div>Loading or Post Not Found...</div>;
 
   return (
