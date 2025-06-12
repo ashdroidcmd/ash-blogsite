@@ -86,7 +86,7 @@ const PostPage = () => {
         )}
 
         {/* Code Download */}
-        <a href={post.code} download>
+        <a href={post.code} target="_blank">
           <button className="btn bg-zinc-400 text-black text-lg font-[Montserrat] mb-6">
             Download Code (.ino) file
           </button>

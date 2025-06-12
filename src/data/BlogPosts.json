@@ -42,7 +42,7 @@
       "https://res.cloudinary.com/dmkri61cj/image/upload/f_auto,q_auto/v1749646592/1blinkled_e5xph8.jpg",
       "https://res.cloudinary.com/dmkri61cj/image/upload/f_auto,q_auto/v1749646477/1circuit_bsjrvt.png"
     ],
-    "code": "/arduino-codes/blinking-led.rar"
+    "code": "https://drive.google.com/file/d/1VZ-XpwZO82Yd_U4rFcE46AJ70FQLUi66/view?usp=drive_link"
   },
   {
     "id": 2,
@@ -94,7 +94,7 @@
       "https://res.cloudinary.com/dmkri61cj/image/upload/f_auto,q_auto/v1749646598/2button_z4ylds.jpg",
       "https://res.cloudinary.com/dmkri61cj/image/upload/f_auto,q_auto/v1749646440/2circuit_byvvmt.png"
     ],
-    "code": "/arduino-codes/button-led.rar"
+    "code": "https://drive.google.com/file/d/1VM8g2cD0iE0FM6ilvKU-qW0jx5VujtpO/view?usp=drive_link"
   },
   {
     "id": 3,
@@ -144,7 +144,7 @@
       "https://res.cloudinary.com/dmkri61cj/image/upload/f_auto,q_auto/v1749646602/3dimmer_pthm1x.jpg",
       "https://res.cloudinary.com/dmkri61cj/image/upload/f_auto,q_auto/v1749646445/3circuit_bauhjx.png"
     ],
-    "code": "/arduino-codes/pwm-dimmer-led.rar"
+    "code": "https://drive.google.com/file/d/13tPDcMJXJpR7ptoHTentnG5b-S6IL9b1/view?usp=drive_link"
   },
   {
     "id": 4,
@@ -190,7 +190,7 @@
       "https://res.cloudinary.com/dmkri61cj/image/upload/f_auto,q_auto/v1749646614/4trafficlight_zni6es.jpg",
       "https://res.cloudinary.com/dmkri61cj/image/upload/f_auto,q_auto/v1749646538/4circuit_tof6an.png"
     ],
-    "code": "/arduino-codes/traffic-light-system.rar"
+    "code": "https://drive.google.com/file/d/1NYog0La1yTWkirWgRt2Dw0glSwHR6ojb/view?usp=drive_link"
   },
   {
     "id": 5,
@@ -241,7 +241,7 @@
       "https://res.cloudinary.com/dmkri61cj/image/upload/f_auto,q_auto/v1749646572/5ldr_fhrujk.png",
       "https://res.cloudinary.com/dmkri61cj/image/upload/f_auto,q_auto/v1749646430/5circuit_jewrgr.png"
     ],
-    "code": "/arduino-codes/ldr-led.rar"
+    "code": "https://drive.google.com/file/d/1Ccktu78CkOC8gjIzDRzD_xI3Dpf5iAjs/view?usp=drive_link"
   },
   {
     "id": 6,
@@ -283,7 +283,7 @@
       "https://res.cloudinary.com/dmkri61cj/image/upload/f_auto,q_auto/v1749646587/6ultrasonic_enlmkn.png",
       "https://res.cloudinary.com/dmkri61cj/image/upload/f_auto,q_auto/v1749646432/6circuit_i2usty.png"
     ],
-    "code": "/arduino-codes/ultrasonic-sensor.rar"
+    "code": "https://drive.google.com/file/d/1sWZJfNABj4JIANW1ZTvX5Bd5XSEYRyaD/view?usp=drive_link"
   },
   {
     "id": 7,
@@ -331,6 +331,6 @@
       "https://res.cloudinary.com/dmkri61cj/image/upload/f_auto,q_auto/v1749646589/7dht11_plazoj.jpg",
       "https://res.cloudinary.com/dmkri61cj/image/upload/f_auto,q_auto/v1749646534/7circuit_edz0et.png"
     ],
-    "code": "/arduino-codes/dht11-with-lcd.rar"
+    "code": "https://drive.google.com/file/d/1KXP52mTAwmeaBlngcqBo9-TT_JXr4G0W/view?usp=sharing"
   }
 ]
