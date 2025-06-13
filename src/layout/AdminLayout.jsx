@@ -17,15 +17,30 @@ export default function AdminLayout() {
           className="drawer-overlay lg:hidden"
         ></label>
         <div
-          className={`bg-base-200 min-h-screen transition-all duration-300 ${collapsed ? "w-20" : "w-80"}`}
+          className={`min-h-screen border-e border-e-gray-700 bg-zinc-900 transition-all duration-300 ${collapsed ? "w-20" : "w-80"}`}
         >
           {/* Collapse Button */}
-          <div className="p-2">
+          <div className="border-b border-b-gray-700 py-4 pl-2">
             <button
               onClick={() => setCollapsed(!collapsed)}
-              className="btn btn-sm btn-ghost"
+              className="btn btn-sm btn-ghost py-6"
             >
-              {collapsed ? "➡" : "⬅"}
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="40"
+                height="40"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="lucide lucide-menu-icon lucide-menu"
+              >
+                <path d="M4 12h16" />
+                <path d="M4 18h16" />
+                <path d="M4 6h16" />
+              </svg>
             </button>
           </div>
           <AdminSidebar collapsed={collapsed} />
@@ -33,13 +48,9 @@ export default function AdminLayout() {
       </div>
 
       {/* Main Content */}
-      <div className={`drawer-content bg-zinc-950 text-white`}>
-        
-
+      <div className={`drawer-content text-white`}>
         <AdminNavbar />
-        <div className="p-4">
           <Outlet />
-        </div>
       </div>
     </div>
   );
