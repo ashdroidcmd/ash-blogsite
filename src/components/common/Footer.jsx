@@ -1,10 +1,10 @@
 const Footer = () => {
   return (
     <>
-      <footer className="bg-zinc-900 border-t border-t-gray-700 font-[Roboto]">
-        <div className="footer sm:footer-horizontal text-neutral-content items-center px-4 max-w-7xl mx-auto">
-          <aside className="grid-flow-col items-center font-[Montserrat] py-5">
-            <img src="/logo.png" alt="Logo" className="w-10 h-10" />
+      <footer className="border-t border-t-gray-700 bg-zinc-900 font-[Roboto]">
+        <div className="footer sm:footer-horizontal text-neutral-content mx-auto max-w-7xl items-center px-4">
+          <aside className="grid-flow-col items-center py-5 font-[Montserrat]">
+            <img src="/logo.png" alt="Logo" className="h-10 w-10" />
             <p className="text-lg">
               © {new Date().getFullYear()} Ashlee Zoe Gesite. All rights
               reserved
@@ -22,7 +22,7 @@ const Footer = () => {
                   title="Linkedin"
                 >
                   <svg
-                    className="text-white w-8 h-8"
+                    className="h-8 w-8 text-white"
                     xmlns="http://www.w3.org/2000/svg"
                     width="24"
                     height="24"
@@ -50,7 +50,7 @@ const Footer = () => {
                   title="Github"
                 >
                   <svg
-                    className="text-white w-8 h-8"
+                    className="h-8 w-8 text-white"
                     xmlns="http://www.w3.org/2000/svg"
                     width="24"
                     height="24"
@@ -76,7 +76,7 @@ const Footer = () => {
                   title="Portfolio"
                 >
                   <svg
-                    className="text-white w-8 h-8"
+                    className="h-8 w-8 text-white"
                     xmlns="http://www.w3.org/2000/svg"
                     width="24"
                     height="24"

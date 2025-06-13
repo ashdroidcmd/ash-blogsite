@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link, useSearchParams } from "react-router-dom";
-import { db } from "../firebase";
+import { db } from "../../firebase";
 import { collection, getDocs } from "firebase/firestore";
 
 const ProjectCards = () => {
@@ -14,7 +14,7 @@ const ProjectCards = () => {
     const fetchPosts = async () => {
       try {
         const querySnapshot = await getDocs(
-          collection(db, "arduino-blogposts")
+          collection(db, "arduino-blogposts"),
         );
         const postData = querySnapshot.docs.map((doc) => ({
           id: doc.id,
@@ -30,7 +30,7 @@ const ProjectCards = () => {
   }, []);
 
   const sortedPosts = [...posts].sort(
-    (a, b) => new Date(b.date) - new Date(a.date)
+    (a, b) => new Date(b.date) - new Date(a.date),
   );
 
   const totalPages = Math.ceil(sortedPosts.length / postsPerPage);
@@ -46,7 +46,7 @@ const ProjectCards = () => {
     const fetchPosts = async () => {
       try {
         const querySnapshot = await getDocs(
-          collection(db, "arduino-blogposts")
+          collection(db, "arduino-blogposts"),
         );
         const postData = querySnapshot.docs.map((doc) => ({
           id: doc.id,
@@ -62,12 +62,12 @@ const ProjectCards = () => {
   }, []);
 
   return (
-    <section className="py-10 px-4 max-w-7xl mx-auto">
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+    <section className="mx-auto max-w-7xl px-4 py-10">
+      <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {currentPosts.map((project) => (
           <div
             key={project.id}
-            className="card bg-zinc-800 border border-gray-700 shadow-sm"
+            className="card border border-gray-700 bg-zinc-800 shadow-sm"
           >
             <figure>
               <img src={project.images[0]} alt={project.title} />
@@ -77,7 +77,7 @@ const ProjectCards = () => {
               <h2 className="card-title font-[Montserrat]">{project.title}</h2>
               <p className="mb-4">{project.description?.slice(0, 100)}...</p>
               <Link to={`/projects/${project.slug}`}>
-                <button className="btn bg-zinc-400 text-black text-lg font-[Montserrat]">
+                <button className="btn bg-zinc-400 font-[Montserrat] text-lg text-black">
                   View Project
                 </button>
               </Link>
@@ -87,15 +87,15 @@ const ProjectCards = () => {
       </div>
 
       {/* Pagination Controls */}
-      <div className="flex justify-center gap-2 mt-8">
+      <div className="mt-8 flex justify-center gap-2">
         {Array.from({ length: totalPages }, (_, i) => (
           <button
             key={i + 1}
             onClick={() => goToPage(i + 1)}
-            className={`px-4 py-2 rounded font-semibold transition ${
+            className={`rounded px-4 py-2 font-semibold transition ${
               currentPage === i + 1
-                ? "bg-zinc-400 text-black border-gray-700"
-                : "bg-zinc-800 text-gray-300 border-gray-700 hover:bg-zinc-600"
+                ? "border-gray-700 bg-zinc-400 text-black"
+                : "border-gray-700 bg-zinc-800 text-gray-300 hover:bg-zinc-600"
             }`}
           >
             {i + 1}
