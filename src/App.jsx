@@ -8,6 +8,7 @@ import HomePage from "./pages/HomePage";
 import PostPage from "./pages/PostPage";
 import Login from "./pages/Login";
 import Dashboard from "./pages/admin/Dashboard";
+import AdminRoute from "./routes/AdminRoute";
 
 function App() {
   return (
@@ -24,7 +25,14 @@ function App() {
 
         {/* Admin routes with AdminLayout */}
         <Route path="/admin" element={<AdminLayout />}>
-          <Route path="dashboard" element={<Dashboard />} />
+          <Route
+            path="dashboard"
+            element={
+              <AdminRoute>
+                <Dashboard />
+              </AdminRoute>
+            }
+          />
         </Route>
       </Routes>
     </BrowserRouter>

@@ -10,8 +10,15 @@ const Login = () => {
 
   const handleLogin = async () => {
     try {
-      await signInWithEmailAndPassword(auth, email, password);
-      navigate("/admin/dashboard"); // or any protected route
+      const userCredential = await signInWithEmailAndPassword(
+        auth,
+        email,
+        password,
+      );
+
+      await userCredential.user.getIdToken(true);
+
+      navigate("/admin/dashboard");
     } catch (error) {
       alert("Login failed: " + error.message);
     }
