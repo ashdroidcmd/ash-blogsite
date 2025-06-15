@@ -18,7 +18,7 @@ import Login from "./pages/Login";
 import AdminRoute from "./routes/AdminRoute";
 import Dashboard from "./pages/admin/Dashboard";
 import AdminPosts from "./pages/admin/AdminPosts";
-import CreatPosts from "./pages/admin/CreatPosts";
+import CreatPosts from "./pages/admin/CreatePosts";
 
 function App() {
   return (

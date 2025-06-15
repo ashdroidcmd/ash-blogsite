@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link, useSearchParams } from "react-router-dom";
 import { db } from "../../firebase";
-import { collection, getDocs } from "firebase/firestore";
+import { collection, getDocs, deleteDoc, doc } from "firebase/firestore";
 
 const ListPosts = () => {
   const [posts, setPosts] = useState([]);
@@ -11,23 +11,36 @@ const ListPosts = () => {
   const postsPerPage = 10;
 
   useEffect(() => {
-    const fetchPosts = async () => {
-      try {
-        const querySnapshot = await getDocs(
-          collection(db, "arduino-blogposts"),
-        );
-        const postData = querySnapshot.docs.map((doc) => ({
-          id: doc.id,
-          ...doc.data(),
-        }));
-        setPosts(postData);
-      } catch (error) {
-        console.error("Error fetching posts:", error);
-      }
-    };
-
     fetchPosts();
   }, []);
+
+  const fetchPosts = async () => {
+    try {
+      const querySnapshot = await getDocs(collection(db, "arduino-blogposts"));
+      const postData = querySnapshot.docs.map((doc) => ({
+        id: doc.id,
+        ...doc.data(),
+      }));
+      setPosts(postData);
+    } catch (error) {
+      console.error("Error fetching posts:", error);
+    }
+  };
+
+  const handleDelete = async (id) => {
+    const confirmDelete = window.confirm(
+      "Are you sure you want to delete this post?",
+    );
+    if (!confirmDelete) return;
+
+    try {
+      await deleteDoc(doc(db, "arduino-blogposts", id));
+      setPosts((prevPosts) => prevPosts.filter((post) => post.id !== id));
+      console.log("Post deleted successfully");
+    } catch (error) {
+      console.error("Error deleting post:", error);
+    }
+  };
 
   const sortedPosts = [...posts].sort(
     (a, b) => new Date(b.date) - new Date(a.date),
@@ -41,7 +54,7 @@ const ListPosts = () => {
   const goToPage = (page) => {
     setSearchParams({ page: page.toString() });
   };
-  
+
   return (
     <>
       <section className="px-4 py-5">
@@ -60,21 +73,25 @@ const ListPosts = () => {
                   <td className="px-4 py-3 font-semibold">{project.title}</td>
                   <td className="px-4 py-3">{project.date}</td>
                   <td className="space-x-3 px-4 py-3">
+                    
                     <Link to={`/projects/${project.slug}`}>
                       <button className="btn btn-sm bg-zinc-400 text-black">
                         View
                       </button>
                     </Link>
-                    <Link to={`/projects/${project.slug}`}>
-                      <button className="btn btn-sm bg-zinc-400 text-black">
+                    
+                    <Link to={`/projects/edit/${project.slug}`}>
+                      <button className="btn btn-sm bg-blue-500 text-white">
                         Edit
                       </button>
                     </Link>
-                    <Link to={`/projects/${project.slug}`}>
-                      <button className="btn btn-sm bg-zinc-400 text-black">
-                        Delete
-                      </button>
-                    </Link>
+                    
+                    <button
+                      className="btn btn-sm bg-red-500 text-white"
+                      onClick={() => handleDelete(project.id)}
+                    >
+                      Delete
+                    </button>
                   </td>
                 </tr>
               ))}
