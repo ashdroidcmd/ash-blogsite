@@ -1,14 +1,24 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
 import { Analytics } from "@vercel/analytics/react";
+
+// Layouts
 import MainLayout from "./layout/MainLayout";
 import AdminLayout from "./layout/AdminLayout";
+
+// Utils
 import ScrollToTop from "./utils/ScrollToTop";
+
+// Common Pages
 import HomePage from "./pages/HomePage";
 import PostPage from "./pages/PostPage";
 import Login from "./pages/Login";
-import Dashboard from "./pages/admin/Dashboard";
+
+// Admin Pages
 import AdminRoute from "./routes/AdminRoute";
+import Dashboard from "./pages/admin/Dashboard";
+import AdminPosts from "./pages/admin/AdminPosts";
+import CreatPosts from "./pages/admin/CreatPosts";
 
 function App() {
   return (
@@ -24,15 +34,17 @@ function App() {
         </Route>
 
         {/* Admin routes with AdminLayout */}
-        <Route path="/admin" element={<AdminLayout />}>
-          <Route
-            path="dashboard"
-            element={
-              <AdminRoute>
-                <Dashboard />
-              </AdminRoute>
-            }
-          />
+        <Route
+          path="/admin"
+          element={
+            <AdminRoute>
+              <AdminLayout />
+            </AdminRoute>
+          }
+        >
+          <Route path="dashboard" element={<Dashboard />} />
+          <Route path="admin-posts" element={<AdminPosts />} />
+          <Route path="create-posts" element={<CreatPosts />} />
         </Route>
       </Routes>
     </BrowserRouter>
