@@ -30,7 +30,7 @@ const Navbar = () => {
             </Link>
           </div>
 
-          <div className="navbar-end">
+          <div className="navbar-end hidden">
             {user ? (
               <button
                 onClick={handleLogout}

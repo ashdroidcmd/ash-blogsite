@@ -80,22 +80,11 @@ const PostPage = () => {
             </figure>
           )}
 
-          {post.wiringDiagram && (
-            <div className="mb-8">
-              {Object.entries(post.wiringDiagram).map(([component, steps]) => (
-                <div key={component} className="mb-6">
-                  <h3 className="font-[Montserrat] text-3xl font-semibold">
-                    {component}
-                  </h3>
-                  <ul className="mb-4 list-disc ps-7">
-                    {steps.map((step, index) => (
-                      <li key={index}>{step}</li>
-                    ))}
-                  </ul>
-                </div>
-              ))}
-            </div>
-          )}
+          {post.content.map((para, index) => (
+            <p key={index} className="mb-6">
+              {para}
+            </p>
+          ))}
 
           {/* Code Download */}
           <a href={post.code} target="_blank">
@@ -103,33 +92,6 @@ const PostPage = () => {
               Download Code (.ino) file
             </button>
           </a>
-
-          {/* How it Works */}
-          <h3 className="font-[Montserrat] text-3xl font-semibold">
-            How it Works
-          </h3>
-          <ol className="mb-4 list-disc ps-7">
-            {post.howItWorks &&
-              post.howItWorks.map((item, i) => <li key={i}>{item}</li>)}
-          </ol>
-
-          {/* Code Breakdown */}
-          <h3 className="font-[Montserrat] text-3xl font-semibold">
-            Code Breakdown
-          </h3>
-          <ul className="mb-6 list-disc ps-7">
-            {post.codeBreakdown &&
-              post.codeBreakdown.map((item, i) => <li key={i}>{item}</li>)}
-          </ul>
-
-          {/* What I Learned */}
-          <h3 className="font-[Montserrat] text-3xl font-semibold">
-            What I Learned
-          </h3>
-          <ul className="mb-6 list-disc ps-7">
-            {post.lessonsLearned &&
-              post.lessonsLearned.map((item, i) => <li key={i}>{item}</li>)}
-          </ul>
         </div>
       </section>
     </>
